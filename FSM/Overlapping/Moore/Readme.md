@@ -1,10 +1,11 @@
-# 10101 Overlapping Sequence Detector — Mealy FSM
+# 10101 Overlapping Sequence Detector — Moore FSM
 
 ## Overview
-A 5-state Mealy FSM implemented in SystemVerilog to detect the overlapping bit sequence `10101`.
+A 6-state Moore FSM implemented in SystemVerilog to detect the overlapping bit sequence `10101`.
 
 ## Features
 - Overlapping sequence detection
+- Dedicated detection state
 - Asynchronous active-high reset
 - Self-checking testbench
 - Verified using Icarus Verilog
@@ -17,9 +18,8 @@ Detects `10101` twice, including the overlapping occurrence.
 
 ## Simulation
 ```bash
-iverilog -g2012 -Wall -o mealy.vvp rtl.sv tb.sv
-vvp mealy.vvp
+iverilog -g2012 -Wall -o moore.vvp rtl.sv tb.sv
+vvp moore.vvp
 ```
-## Output from Surfer(Windows)
-
+## Output
 ![Waveform](wave.png)
